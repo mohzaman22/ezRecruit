@@ -1,4 +1,5 @@
 import re
+import textract
 
 def getcontent(file):
     return textract.process(('Resumes/{}').format(file))
