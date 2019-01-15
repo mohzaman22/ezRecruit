@@ -1,20 +1,46 @@
+import csv
+import getopt
 import os
 import re
-import scrape
+import sys
+import urllib2
+from cStringIO import StringIO
+from urllib2 import urlopen
+
+import numpy as np
+import pandas as pd
+import spacy
+from bs4 import BeautifulSoup
+from pdfminer.converter import TextConverter
+from pdfminer.layout import LAParams
+from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
+from pdfminer.pdfpage import PDFPage
+
+def convert(fname, pages=None):
+    if not pages:
+        pagenums = set()
+    else:
+        pagenums = set(pages)
+
+    output = StringIO()
+    manager = PDFResourceManager()
+    converter = TextConverter(manager, output, laparams=LAParams())
+    interpreter = PDFPageInterpreter(manager, converter)
+
+    infile = file('Resumes/{}'.format(fname),'rb')
+    for page in PDFPage.get_pages(infile, pagenums):
+        interpreter.process_page(page)
+
+    infile.close()
+    converter.close()
+    text = output.getvalue()
+    output.close
+
+    return text
 
 def main():
-    applicants = {}
-    for file in os.listdir('Resumes'):
-        # Extract content of Resume
-        pdfText = scrape.getcontent(file)
-        # Resume Author
-        content = re.findall('\w+',pdfText)
-        candidate = scrape.getname(content)
-        # Process skill matches and assign a score to this candidate;
-        # store entry in dictionary to be analyzed after processing
-        # all candidates.
-        applicants[candidate] = 0
-
-    return applicants
+    for f in os.listdir('Resumes'):
+        if f != '.DS_Store':
+            print convert(f)
 
 if __name__ == '__main__': main()
