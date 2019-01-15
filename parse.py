@@ -38,9 +38,19 @@ def convert(fname, pages=None):
 
     return text
 
+def extract_name(text):
+    reload(sys)
+    sys.setdefaultencoding('utf8')
+    nlp = spacy.load('xx')
+    doc = nlp(unicode(text))
+    for ent in doc.ents:
+        if ent.label_ == 'PER':
+            return ent.text
+
 def main():
     for f in os.listdir('Resumes'):
         if f != '.DS_Store':
-            print convert(f)
+            res = convert(f)
+            print extract_name(res)
 
 if __name__ == '__main__': main()
