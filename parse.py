@@ -3,14 +3,11 @@ import getopt
 import os
 import re
 import sys
-import urllib2
 from cStringIO import StringIO
 from urllib2 import urlopen
 
-import numpy as np
 import pandas as pd
 import spacy
-from bs4 import BeautifulSoup
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
@@ -48,7 +45,7 @@ def extract_skills(lookup,text):
     for word in text.split(' '):
         if word in lookup.keys():
             skills.append(word)
-    return skills
+    return (list(set(skills)))
 
 def main():
     # Reads CSV and creates dictionary of technical skills and their skills type.
@@ -57,17 +54,23 @@ def main():
         for skill in ts:
             line = skill.split(',')
             skills_dict[line[1].replace('\r\n','')] = line[0]
+    del skills_dict['']
     # Parse each candidate's resume.
     for f in os.listdir('Resumes'):
         if f != '.DS_Store':
             # Convert to raw text
             text = convert(f)
             name = extract_name(text).rstrip()
-            text = text.lower()
+            text = text.lower().replace(',','')
             # Candidate name
             print 'Candidate: {}'.format(name) 
             # Contact information
-            print 'Email: ' + re.findall('\S+@\S+', text)[0]
+            print 'Email: ' + re.findall('\S+@\S+',text)[0]
+            sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)
+            if sites:
+                print 'Site: {}'.format(sites[0])
+            else:
+                print 'Site: N/A'
             # Technical skills
             print 'Technical skills: '
             print extract_skills(skills_dict,text)
