@@ -75,5 +75,6 @@ def main():
             print 'Technical skills: '
             print extract_skills(skills_dict,text)
             print '\n'
-
+    return skills_dict
+    
 if __name__ == '__main__': main()

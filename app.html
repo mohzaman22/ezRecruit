@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<!-- This will serve as the front-end for the resume parser-->
+<html>
+    <head>
+        <p>
+            Here are some results:<br/>
+            <% 
+                import sys
+                sys.path.insert(0,'/Users/donnelldebnam/Documents/GitHub/ezRecruit')
+                import parse as rp
+
+                # Run main method through PyGreen server
+                text = rp.main()
+            %>
+            <h3>${text}</h3>
+        </p>
+    </head>
+</html>
