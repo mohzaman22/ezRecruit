@@ -63,7 +63,7 @@ def main():
             name = extract_name(text).rstrip()
             text = text.lower().replace(',','')
             # Candidate name
-            print 'Candidate: {}'.format(name) 
+            print 'Name: {}'.format(name) 
             # Contact information
             print 'Email: ' + re.findall('\S+@\S+',text)[0]
             sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)

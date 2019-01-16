@@ -1,36 +1,72 @@
-Programming Language,assembley language
-Programming Language,bash
-Programming Language,c
-Programming Language,c#
-Programming Language,c++
-Programming Language,cobol
-Programming Language,cobra
-Programming Language,cython
-Programming Language,dart
-Programming Language,draco
-Programming Language,fortran
-Programming Language,groovy
-Programming Language,html
-Programming Language,java
-Programming Language,javascript
-Programming Language,matlab
-Programming Language,objective-c
-Programming Language,pascal
-Programming Language,perl
-Programming Language,php
-Programming Language,python
-Programming Language,r
-Programming Language,ruby
-Programming Language,ruby on rails
-Programming Language,scala
-Programming Language,sql
-Programming Language,swift
-Programming Language,xhtml
-Programming Language,xml
-Programming Language,css
+programming language,assembley language
+programming language,bash
+programming language,c
+programming language,c#
+programming language,c++
+programming language,cobol
+programming language,cobra
+programming language,css
+programming language,cython
+programming language,dart
+programming language,draco
+programming language,fortran
+programming language,go
+programming language,groovy
+programming language,html
+programming language,java
+programming language,javascript
+programming language,matlab
+programming language,objective-c
+programming language,pascal
+programming language,perl
+programming language,php
+programming language,python
+programming language,r
+programming language,ruby
+programming language,ruby on rails
+programming language,scala
+programming language,sql
+programming language,swift
+programming language,typescript
+programming language,xhtml
+programming language,xml
 ,
+operating system,ios
+operating system,kali linux
+operating system,linux
+operating system,os x
+operating system,parrot
+operating system,parrot security os
+operating system,ubuntu
+operating system,unix
+operating system,windows
 ,
+technology,android studio
+technology,eclipse
+technology,git
+technology,github
+technology,intellij
+technology,netbeans
+technology,visual studio
 ,
+database,mongodb
+database,mysql
+database,sql server
+database,sqlite
 ,
-,
-,
+framework,.net
+framework,angular
+framework,apache
+framework,bootstrap
+framework,cordova
+framework,django
+framework,emberjs
+framework,express.js
+framework,firebase
+framework,flask
+framework,hadoop
+framework,junit
+framework,node.js
+framework,react native
+framework,spark
+framework,xamarin
