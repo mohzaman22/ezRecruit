@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html>
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
@@ -10,22 +11,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-    <style>
-        .btn-lg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            background-color: #555;
-            color: white;
-            font-size: 16px;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
+
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
@@ -44,10 +30,13 @@
             </div>
         </div>
     </nav>
-    <form enctype='multipart/form-data' method='POST' action='render.html'>
-        <input type='file' name='files[]' multiple />
-        <button type='submit'>Submit</button>
-    </form>
-</body>
+    <% 
+        import sys
+        sys.path.insert(0,'Users/donnelldebnam/Documents/GitHub/ezRecruit')
 
+        import parse
+        text = parse.main()
+    %>
+    <p style="color:blue"> ${text} </p>
+</body>
 </html>
