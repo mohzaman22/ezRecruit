@@ -10,7 +10,22 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-
+    <style>
+        .btn-lg {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            -ms-transform: translate(-50%, -50%);
+            background-color: #555;
+            color: white;
+            font-size: 16px;
+            padding: 12px 24px;
+            border: none;
+            cursor: pointer;
+            border-radius: 5px;
+        }
+    </style>
 <body>
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
@@ -22,20 +37,21 @@
                             aria-haspopup="true" aria-expanded="false">Menu</a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <a class="dropdown-item" href="home.html">Home</a>
-                            <a class="dropdown-item" href="app.html">Use the Tool</a>
+                            <a class="dropdown-item" href="app.html">Resume Parser</a>
                         </div>
                     </li>
                 </ul>
             </div>
         </div>
     </nav>
-    <% 
-        import sys
-        sys.path.insert(0,'/Users/donnelldebnam/Documents/GitHub/ezRecruit')
-        import parse
-        text = parse.main()
-    %>
-    <p>${text}</p>
+    <script>
+        function openAttachment() 
+            {document.getElementById('attachment').click();}
+        function fileSelected(input)
+            {document.getElementById('btnAttachment').value = input.files[0].name}
+    </script>
+    <input type="file" class="file" id="attachment" style="display: none;" onchange="fileSelected(this)" />
+    <input type="button" class="btn-lg file" id="btnAttachment" onclick="openAttachment()" value="File" />
 </body>
 
 </html>

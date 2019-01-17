@@ -50,6 +50,7 @@ def extract_skills(lookup,text):
 def main():
     # Reads CSV and creates dictionary of technical skills and their skills type.
     skills_dict = {}
+    profiles = []
     with open('techskills.csv','r') as ts:
         for skill in ts:
             line = skill.split(',')
@@ -58,23 +59,27 @@ def main():
     # Parse each candidate's resume.
     for f in os.listdir('Resumes'):
         if f != '.DS_Store':
+            # New entry
+            candidate = ''
             # Convert to raw text
             text = convert(f)
             name = extract_name(text).rstrip()
             text = text.lower().replace(',','')
             # Candidate name
-            print 'Name: {}'.format(name) 
+            candidate += '\nName: {}'.format(name) 
             # Contact information
-            print 'Email: ' + re.findall('\S+@\S+',text)[0]
+            candidate += '\nEmail: ' + re.findall('\S+@\S+',text)[0]
             sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)
             if sites:
-                print 'Site: {}'.format(sites[0])
+                candidate += '\nSite: {}'.format(sites[0])
             else:
-                print 'Site: N/A'
+                candidate += '\nSite: N/A'
             # Technical skills
-            print 'Technical skills: '
-            print extract_skills(skills_dict,text)
-            print '\n'
-    return skills_dict
+            candidate += '\nTechnical skills: '
+            for s in extract_skills(skills_dict,text):
+                candidate += (str(s) + " ")
+            candidate += '\n'
+            profiles.append(candidate)
+    return profiles
     
 if __name__ == '__main__': main()
