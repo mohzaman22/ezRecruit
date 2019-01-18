@@ -1,32 +1,16 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1 user-scalable=no">
     <title>Try It!</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
-    <style>
-        .btn-lg {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            -ms-transform: translate(-50%, -50%);
-            background-color: #555;
-            color: white;
-            font-size: 16px;
-            padding: 12px 24px;
-            border: none;
-            cursor: pointer;
-            border-radius: 5px;
-        }
-    </style>
-<body>
     <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="home.html"><img src="img/res.png" style="height:30px;"></a>
@@ -44,10 +28,22 @@
             </div>
         </div>
     </nav>
-    <form enctype='multipart/form-data' method='POST' action='render.html'>
-        <input type='file' name='files[]' multiple />
-        <button type='submit'>Submit</button>
-    </form>
+
+<body>
+
+    <header class="masthead d-flex">
+        <div class="container text-center my-auto">
+            <h1 class="mb-1">Resume Parser</h1>
+            <h3 class="mb-5">
+                <em>Select a group of resumes to be reviewed and ranked!</em>
+            </h3>
+                <label class="btn btn-primary btn-xl js-scroll-trigger">
+                    Choose File <input type="file" style="display: none;">
+                </label>
+        </div>
+        <div class="overlay"></div>
+    </header>
+
 </body>
 
 </html>
