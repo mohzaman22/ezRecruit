@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 import csv
 import getopt
 import os
@@ -53,15 +55,9 @@ def extract_skills(lookup, text):
 
 def main():
 
-    # Console Log (start)
-    print '\nParsing is beginning...\n============================'
-
     # Reads CSV and creates dictionary of technical skills and their skills type.
     skills_dict = {}
     profiles = []
-
-    # Console log (20)
-    print 'Loading...\t\t15%\n'
 
     with open('techskills.csv', 'r') as ts:
         for skill in ts:
@@ -69,44 +65,25 @@ def main():
             skills_dict[line[1].replace('\r\n', '')] = line[0]
     del skills_dict['']
 
-    # Console log (30)
-    print 'Loading...\t\t30%\n'
-
-    # Console Logging benchmark
-    load = 40
-
     # Parse each candidate's resume.
     for f in os.listdir('uploads'):
         if f != '.DS_Store':
-            # New entry
-            candidate = ''
             # Convert to raw text
             text = convert(f)
             name = extract_name(text).rstrip()
             text = text.lower().replace(',', '')
             # Candidate name
-            candidate += '\nName: {}'.format(name)
+            print 'Name: {}'.format(name)
             # Contact information
-            candidate += '\nEmail: ' + re.findall('\S+@\S+', text)[0]
+            print 'Email: ' + re.findall('\S+@\S+', text)[0]
             sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)
             if sites:
-                candidate += '\nSite: {}'.format(sites[0])
+                print 'Site: {}'.format(sites[0])
             else:
-                candidate += '\nSite: N/A'
+                print 'Site: N/A'
             # Technical skills
-            candidate += '\nTechnical skills: '
-            for s in extract_skills(skills_dict, text):
-                candidate += (str(s) + " ")
-            candidate += '\n'
-            profiles.append(candidate)
-
-            # Console log (40-100)
-            load += 15
-            print 'Loading...\t\t{}%\n'.format(load)
-
-    # Console log (complete)
-    print 'Parsing complete!'
-    return profiles
+            print 'Technical skills: '
+            print extract_skills(skills_dict, text)
 
 
 if __name__ == '__main__':

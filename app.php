@@ -51,7 +51,7 @@
                         aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.html">Home</a>
-                        <a class="dropdown-item" href="files_upload_ajax.php">Resume Parser</a>
+                        <a class="dropdown-item" href="app.php">Resume Parser</a>
                     </div>
                 </li>
             </ul>
@@ -91,7 +91,7 @@
 
         <!-- Parser -->
         <div style="float: right; width: 225px">
-            <form action="render.html">
+            <form action="render.php">
                 <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
             </form>
         </div>

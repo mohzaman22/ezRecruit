@@ -34,14 +34,13 @@
 <!-- Navbar -->
 
 <body>
-    <% 
-        import sys
-        sys.path.insert(0,'/Users/donnelldebnam/Documents/GitHub/ezRecruit')
-
-        import parse
-        text = parse.main()
-    %>
-    <p style="color:blue"> ${text} </p>
+    <h2 style="color:blue;">
+        <?php
+        $command = escapeshellcmd('/Users/donnelldebnam/Documents/GitHub/ezRecruit/parse.py');
+        $output = shell_exec($command);
+        echo $output;
+        ?>
+    <h2>
 </body>
 
 </html>
