@@ -53,7 +53,6 @@
     <!-- File Selector -->
     <div style="width:400px;">
         <div style="float: left; width: 130px">
-
             <form action="" method="post" enctype="multipart/form-data">
                 <label class="btn btn-primary" for="files" style="margin-left:620px;">Browse...
                     <input type="file" id="files" name="files[]" multiple />
@@ -61,12 +60,12 @@
             </form>
         </div>
         <div style="float: right; width: 225px">
-            <form>
-                <button class="btn btn-primary" style="margin-left: 575px" onclick="test()">Parse!</button>
+            <form action="render.html">
+                <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
             </form>
         </div>
     </div>
-        <br></br>
+    <br></br>
     <output id="list" style="margin-left:440px; line-height: 2em"></output>
     <!-- File Selector -->
 
