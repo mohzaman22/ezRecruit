@@ -13,31 +13,37 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
-    <!-- Navbar-->
-    <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="index.html"><img src="img/res.png" style="height:30px;"></a>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                <ul class="navbar-nav mr-auto">
-                    <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="false">Menu</a>
-                        <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="index.html">Home</a>
-                            <a class="dropdown-item" href="app.html">Resume Parser</a>
-                        </div>
-                    </li>
-                </ul>
-            </div>
+<!-- Navbar-->
+<nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
+    <div class="container-fluid">
+        <a class="navbar-brand" href="index.html"><img src="img/res.png"></a>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item dropdown">
+                    <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">Menu</a>
+                    <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="index.html">Home</a>
+                        <a class="dropdown-item" href="app.html">Resume Parser</a>
+                    </div>
+                </li>
+            </ul>
         </div>
-    </nav>
-    <!-- Navbar-->
+    </div>
+</nav>
+<!-- Navbar-->
 
 <body>
 
+    <script>
+        function test() {
+            alert('This is a test')
+        }
+    </script>
+
     <!-- Page Text-->
     <div class="container text-center my-auto">
-        <h1 class="mb-1"  style="line-height: 4em">Resume Parser</h1>
+        <h1 class="mb-1">Resume Parser</h1>
         <h3 class="mb-5">
             <em>Select a group of resumes to be</br> reviewed and ranked!</em>
         </h3>
@@ -45,14 +51,24 @@
     <!-- Page Text-->
 
     <!-- File Selector -->
-    <form action="" method="post" enctype="multipart/form-data">
-        <label class="btn btn-primary" for="files" style="margin-left:680px;">Browse...
-            <input type="file" id="files" name="files[]" multiple/>
-        </label>
-    </form>
-    <br/>
-    <output id="list" style="margin-left:450px; line-height: 2em"></output>
-    <!-- File Selector-->
+    <div style="width:400px;">
+        <div style="float: left; width: 130px">
+
+            <form action="" method="post" enctype="multipart/form-data">
+                <label class="btn btn-primary" for="files" style="margin-left:620px;">Browse...
+                    <input type="file" id="files" name="files[]" multiple />
+                </label>
+            </form>
+        </div>
+        <div style="float: right; width: 225px">
+            <form>
+                <button class="btn btn-primary" style="margin-left: 575px" onclick="test()">Parse!</button>
+            </form>
+        </div>
+    </div>
+        <br></br>
+    <output id="list" style="margin-left:440px; line-height: 2em"></output>
+    <!-- File Selector -->
 
     <!-- jQuery -->
     <script>
