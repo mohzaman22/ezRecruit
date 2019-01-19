@@ -76,7 +76,7 @@ def main():
     load = 40
 
     # Parse each candidate's resume.
-    for f in os.listdir('Resumes'):
+    for f in os.listdir('uploads'):
         if f != '.DS_Store':
             # New entry
             candidate = ''
