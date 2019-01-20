@@ -26,7 +26,7 @@ def convert(fname, pages=None):
     manager = PDFResourceManager()
     converter = TextConverter(manager, output, laparams=LAParams())
     interpreter = PDFPageInterpreter(manager, converter)
-    infile = file('Resumes/{}'.format(fname), 'rb')
+    infile = file('uploads/{}'.format(fname), 'rb')
     for page in PDFPage.get_pages(infile, pagenums):
         interpreter.process_page(page)
     infile.close()
