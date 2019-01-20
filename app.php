@@ -78,7 +78,7 @@
     <div style="width:400px;">
 
 
-        <!-- File Selector -->
+    <!-- 
         <div style="float: left; width: 130px">
             <form action="" method="post" enctype="multipart/form-data">
                 <label id="upload" class="btn btn-primary" for="files" style="margin-left:620px;">Browse...
@@ -86,17 +86,26 @@
                 </label>
             </form>
         </div>
-        <!-- File Selector -->
-
-
-        <!-- Parser -->
         <div style="float: right; width: 225px">
             <form action="render.php">
                 <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
             </form>
         </div>
-        <!-- Parser -->
+    -->
 
+        <p id="msg"></p>
+        <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+        
+        
+        <!-- Upload -->
+        <button id="upload">Upload</button>
+
+        <!-- Parse -->
+        <div style="float: right; width: 225px">
+            <form action="render.php">
+                <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
+            </form>
+        </div>
         
     </div>
     <br />

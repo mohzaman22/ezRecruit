@@ -5,6 +5,7 @@ import getopt
 import os
 import re
 import sys
+import myutils
 from cStringIO import StringIO
 from urllib2 import urlopen
 
@@ -84,6 +85,10 @@ def main():
             # Technical skills
             print 'Technical skills: '
             print extract_skills(skills_dict, text)
+            print '\n'
+            
+    # Clear directory
+    myutils.cleardir()
 
 
 if __name__ == '__main__':
