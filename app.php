@@ -71,66 +71,28 @@
     </div>
     <!-- Page Text-->
 
-
-
-
     <!-- App Buttons -->
     <div style="width:400px;">
 
-
-    <!-- 
-        <div style="float: left; width: 130px">
-            <form action="" method="post" enctype="multipart/form-data">
-                <label id="upload" class="btn btn-primary" for="files" style="margin-left:620px;">Browse...
-                    <input type="file" id="files" name="files[]" multiple />
-                </label>
-            </form>
-        </div>
-        <div style="float: right; width: 225px">
-            <form action="render.php">
-                <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
-            </form>
-        </div>
-    -->
-
-        <p id="msg"></p>
-        <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+        <!-- Browse -->
+        <label class="btn btn-primary"style="margin-left: 675px">Browse...
+            <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
+        </label>
         
         
         <!-- Upload -->
-        <button id="upload">Upload</button>
+        <label>
+            <button id="upload" class="btn btn-primary"style="margin-left: 685px">Upload</button>
+        </label>
 
         <!-- Parse -->
-        <div style="float: right; width: 225px">
-            <form action="render.php">
-                <button class="btn btn-primary" style="margin-left: 575px">Parse!</button>
-            </form>
-        </div>
+        <form action="render.php">
+            <button class="btn btn-primary" style="margin-left: 690px;">Parse!</button>
+        </form>
         
     </div>
-    <br />
-    <output id="list" style="margin-left:440px; line-height: 2em"></output>
+    <p id="msg"></p>
     <!-- App Buttons -->
-
-
-
-    <!-- jQuery -->
-    <script>
-        function handleFileSelect(evt) {
-            var files = evt.target.files;
-            // files is a FileList of File objects. List some properties.
-            var output = [];
-            for (var i = 0, f; f = files[i]; i++) {
-                output.push('<li><strong>', escape(f.name), '</strong> (', f.type || 'n/a', ') - ',
-                    f.size, ' bytes, last modified: ',
-                    f.lastModifiedDate ? f.lastModifiedDate.toLocaleDateString() : 'n/a',
-                    '</li>');
-            }
-            document.getElementById('list').innerHTML = '<ul>' + output.join('') + '</ul>';
-        }
-        document.getElementById('files').addEventListener('change', handleFileSelect, false);
-    </script>
-    <!-- jQuery -->
 
 </body>
 

@@ -24,7 +24,7 @@
                         aria-haspopup="true" aria-expanded="false">Menu</a>
                     <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                         <a class="dropdown-item" href="index.html">Home</a>
-                        <a class="dropdown-item" href="app.html">Resume Parser</a>
+                        <a class="dropdown-item" href="app.php">Resume Parser</a>
                     </div>
                 </li>
             </ul>
