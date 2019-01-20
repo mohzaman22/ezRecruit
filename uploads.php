@@ -7,15 +7,15 @@ if (isset($_FILES['files']) && !empty($_FILES['files'])) {
             echo "Error: " . $_FILES["files"]["error"][$i] . "<br>";
         } else {
             if (file_exists('uploads/' . $_FILES["files"]["name"][$i])) {
-                echo 'File already exists : uploads/' . $_FILES["files"]["name"][$i];
+                echo 'File already exists : uploads/' . $_FILES["files"]["name"][$i] . '<br>';
             } else {
                 move_uploaded_file($_FILES["files"]["tmp_name"][$i], 'uploads/' . $_FILES["files"]["name"][$i]);
-                echo 'File successfully uploaded : uploads/' . $_FILES["files"]["name"][$i] . ' ';
+                echo 'File successfully uploaded : uploads/' . $_FILES["files"]["name"][$i] . '<br>';
             }
         }
     }
 } else {
-    echo 'Please choose at least one file';
+    echo 'Please choose at least one file!';
 }
 
 /*

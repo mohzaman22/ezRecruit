@@ -66,7 +66,7 @@
     <div class="container text-center my-auto">
         <h1 class="mb-1">Resume Parser</h1>
         <h3 class="mb-5">
-            <em>Select a group of resumes to be<br/> reviewed and ranked!</em>
+            <em>Select a group of resumes to be<br/> reviewed and ranked! (PDF only)</em>
         </h3>
     </div>
     <!-- Page Text-->
@@ -91,7 +91,8 @@
         </form>
         
     </div>
-    <p id="msg"></p>
+    <br />
+    <p id="msg" class="text-center"></p>
     <!-- App Buttons -->
 
 </body>

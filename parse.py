@@ -74,19 +74,19 @@ def main():
             name = extract_name(text).rstrip()
             text = text.lower().replace(',', '')
             # Candidate name
-            print 'Name: {}'.format(name)
+            print 'Name: {}'.format(name) + '<br>'
             # Contact information
-            print 'Email: ' + re.findall('\S+@\S+', text)[0]
+            print 'Email: ' + re.findall('\S+@\S+', text)[0] + '<br>'
             sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)
             if sites:
-                print 'Site: {}'.format(sites[0])
+                print 'Site: {}'.format(sites[0]) + '<br>'
             else:
-                print 'Site: N/A'
+                print 'Site: N/A<br>'
             # Technical skills
             print 'Technical skills: '
             print extract_skills(skills_dict, text)
-            print '\n'
-            
+            print '<br><br>'
+
     # Clear directory
     myutils.cleardir()
 
