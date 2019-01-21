@@ -3,9 +3,9 @@
 import csv
 import getopt
 import os
+import random
 import re
 import sys
-import myutils
 from cStringIO import StringIO
 from urllib2 import urlopen
 
@@ -15,6 +15,9 @@ from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
 from pdfminer.pdfinterp import PDFPageInterpreter, PDFResourceManager
 from pdfminer.pdfpage import PDFPage
+
+import myutils
+from candidate import Candidate
 
 
 def convert(fname, pages=None):
@@ -56,10 +59,12 @@ def extract_skills(lookup, text):
 
 def main():
 
-    # Reads CSV and creates dictionary of technical skills and their skills type.
+    # Will hold all candidates and respective skills...
     skills_dict = {}
-    profiles = []
+    all_candidates = []
+    all_scores = []
 
+    # Reads CSV and creates dictionary of technical skills and their skills type.
     with open('techskills.csv', 'r') as ts:
         for skill in ts:
             line = skill.split(',')
@@ -86,10 +91,17 @@ def main():
             print 'Technical skills: '
             print extract_skills(skills_dict, text)
             print '<br><br>'
+            c = Candidate(name, sites[0], re.findall('\S+@\S+', text)[0],
+                          extract_skills(skills_dict, text), random.randint(1, 101))
+            # Add new candidate to list
+            all_candidates.append(c)
+
+    # Sort candidates
+    all_candidates.sort(key=lambda x: x.get_score(), reverse=True)
 
     # Clear directory
     myutils.cleardir()
 
-
+ 
 if __name__ == '__main__':
     main()
