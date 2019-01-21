@@ -72,22 +72,23 @@
     <!-- Page Text-->
 
     <!-- App Buttons -->
-    <div style="width:400px;">
+    <div style="width:400px;" class="container text-center my-auto">
 
         <!-- Browse -->
-        <label class="btn btn-primary"style="margin-left: 675px">Browse...
+        <label class="btn btn-primary">Browse...
             <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
         </label>
-        
+        <br/>
         
         <!-- Upload -->
         <label>
-            <button id="upload" class="btn btn-primary"style="margin-left: 685px">Upload</button>
+            <button id="upload" class="btn btn-primary">Upload</button>
         </label>
+        <br/>
 
         <!-- Parse -->
         <form action="render.php">
-            <button class="btn btn-primary" style="margin-left: 690px;">Parse!</button>
+            <button class="btn btn-primary">Parse!</button>
         </form>
         
     </div>
