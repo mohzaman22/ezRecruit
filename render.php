@@ -13,6 +13,21 @@
     <script src="https://use.fontawesome.com/releases/v5.0.8/js/all.js"></script>
 </head>
 
+<style>
+    #rcorners2 {
+        border-radius: 25px;
+        background-color: #007bff;
+        padding: 20px;
+        color: white;
+        width: 700px;
+        height: 170px;
+        margin: 0px auto;
+    }
+    a {
+        color: white;
+    }
+</style>
+
 <!-- Navbar -->
 <nav class="navbar navbar-expand-md navbar-light bg-light sticky-top">
     <div class="container-fluid">
@@ -34,13 +49,25 @@
 <!-- Navbar -->
 
 <body>
-    <h2 style="color:blue;">
-        <?php
-        $command = escapeshellcmd('/Users/donnelldebnam/Documents/GitHub/ezRecruit/parse.py');
-        $output = shell_exec($command);
-        echo $output;
-        ?>
-    <h2>
+
+    <!-- Page header text-->
+    <div class="container text-center my-auto">
+        <h1 class="mb-1">Here are your results!</h1>
+    </div>
+    <!-- Page header text-->
+
+    <!-- All results -->
+    <div>
+        <p style="text-align:center">
+            <?php
+                $command = escapeshellcmd('/Users/donnelldebnam/Documents/GitHub/ezRecruit/parse.py');
+                $output = shell_exec($command);
+                echo $output;
+            ?>
+        </p>
+    </div>
+    <!-- All results -->
+    
 </body>
 
 </html>

@@ -21,7 +21,7 @@
                     form_data.append("files[]", document.getElementById('multiFiles').files[x]);
                 }
                 $.ajax({
-                    url: 'uploads.php', // point to server-side PHP script 
+                    url: 'uploads.php', // point to server-side PHP script
                     dataType: 'text', // what to expect back from the PHP script
                     cache: false,
                     contentType: false,
@@ -79,7 +79,7 @@
             <input type="file" id="multiFiles" name="files[]" multiple="multiple"/>
         </label>
         <br/>
-        
+
         <!-- Upload -->
         <label>
             <button id="upload" class="btn btn-primary">Upload</button>
@@ -90,7 +90,7 @@
         <form action="render.php">
             <button class="btn btn-primary">Parse!</button>
         </form>
-        
+
     </div>
     <br />
     <p id="msg" class="text-center"></p>

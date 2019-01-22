@@ -62,7 +62,6 @@ def main():
     # Will hold all candidates and respective skills...
     skills_dict = {}
     all_candidates = []
-    all_scores = []
 
     # Reads CSV and creates dictionary of technical skills and their skills type.
     with open('techskills.csv', 'r') as ts:
@@ -74,34 +73,46 @@ def main():
     # Parse each candidate's resume.
     for f in os.listdir('uploads'):
         if f != '.DS_Store':
-            # Convert to raw text
+            # Convert to raw text; Store information
             text = convert(f)
             name = extract_name(text).rstrip()
             text = text.lower().replace(',', '')
-            # Candidate name
-            print 'Name: {}'.format(name) + '<br>'
-            # Contact information
-            print 'Email: ' + re.findall('\S+@\S+', text)[0] + '<br>'
             sites = re.findall('https?://(?:[-\w.]|(?:%[\da-fA-F]{2}))+', text)
-            if sites:
-                print 'Site: {}'.format(sites[0]) + '<br>'
-            else:
-                print 'Site: N/A<br>'
-            # Technical skills
-            print 'Technical skills: '
-            print extract_skills(skills_dict, text)
-            print '<br><br>'
+            if not sites:
+                sites = ['N/A']
             c = Candidate(name, sites[0], re.findall('\S+@\S+', text)[0],
-                          extract_skills(skills_dict, text), random.randint(1, 101))
+                          extract_skills(skills_dict, text), random.randint(0, 100))
             # Add new candidate to list
             all_candidates.append(c)
 
     # Sort candidates
     all_candidates.sort(key=lambda x: x.get_score(), reverse=True)
 
+    # Print candidate information...
+    for candidate in all_candidates:
+        print '<p id="rcorners2">'
+        print '<b>Name: </b>' + candidate.get_name() + '<br>'
+
+        # Grab website url and email address
+        site = candidate.get_site()
+        mail = candidate.get_email()
+
+        # Configure email
+        print '<b>Email: </b><a href="mailto:' + mail + \
+            '" target="_blank">' + mail + '</a><br>'
+        if site == 'N/A':
+            print '<b>Site: </b>' + site + '<br>'
+        else:
+            print '<b>Site: </b><a href="' + site + '" target="_blank">' + site + '<a><br>'
+
+        print '<b>Technical skills:</b>'
+        print candidate.get_skills()
+        print '<br><b>Match: </b>' + \
+            str(candidate.get_score()) + '%<br></p><br><br>'
+
     # Clear directory
     myutils.cleardir()
 
- 
+
 if __name__ == '__main__':
     main()
