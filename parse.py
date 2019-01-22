@@ -1,15 +1,11 @@
 #!/usr/bin/env python
 
-import csv
-import getopt
 import os
 import random
 import re
 import sys
 from cStringIO import StringIO
-from urllib2 import urlopen
 
-import pandas as pd
 import spacy
 from pdfminer.converter import TextConverter
 from pdfminer.layout import LAParams
