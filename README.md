@@ -19,7 +19,7 @@ Note: Python 2.7.9 and later (on the python2 series), and Python 3.4 and later i
 ## Run
 Once you have installed the required dependencies, navigate to the project's directory and run the application
 
-- Change directory: `cd /././ezRecruit`
+- Change directory: `cd /././ezRecruit/src`
 - Run the app locally: `php -S 127.0.0.1:8080`
 
 
