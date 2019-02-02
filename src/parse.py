@@ -60,7 +60,7 @@ def main():
     all_candidates = []
 
     # Reads CSV and creates dictionary of technical skills and their skills type.
-    with open('techskills.csv', 'r') as ts:
+    with open('../techskills.csv', 'r') as ts:
         for skill in ts:
             line = skill.split(',')
             skills_dict[line[1].replace('\r\n', '')] = line[0]

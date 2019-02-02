@@ -60,7 +60,7 @@
     <div>
         <p style="text-align:center">
             <?php
-                $command = escapeshellcmd('/Users/donnelldebnam/Documents/GitHub/ezRecruit/parse.py');
+                $command = escapeshellcmd('/Users/donnelldebnam/Documents/GitHub/ezRecruit/src/parse.py');
                 $output = shell_exec($command);
                 echo $output;
             ?>
