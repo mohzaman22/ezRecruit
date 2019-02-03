@@ -20,13 +20,11 @@ Note: Python 2.7.9 and later (on the python2 series), and Python 3.4 and later i
 Once you have installed the required dependencies, navigate to the project's directory and run the application
 
 - Change directory: `cd /././ezRecruit/src`
-- Run the app locally: `php -S 127.0.0.1:8080`
+- Run the app locally: `php -S localhost:8080`
 
 
 ## Results
-
-![ezRecruit Demo gif](http://g.recordit.co/xPh4gK70lz.gifhh)
-
+<a href="https://gifyu.com/image/wtON"><img src="https://s2.gifyu.com/images/Recording.gif" alt="Recording.gif" border="0" /></a>
 
 ## Enhancements
 Please feel free to message me or open an issue if you have an idea for an enhancement! Seems like people are starting to use this and I would like to improve it.
