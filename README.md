@@ -24,7 +24,7 @@ Once you have installed the required dependencies, navigate to the project's dir
 
 
 ## Results
-![Demo](https://s2.gifyu.com/images/Recording.gif)
+![Demo](demo.gif)
 
 ## Enhancements
 Please feel free to message me or open an issue if you have an idea for an enhancement! Seems like people are starting to use this and I would like to improve it.
