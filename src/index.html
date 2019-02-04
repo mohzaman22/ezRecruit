@@ -22,19 +22,20 @@
         -o-background-size: cover;
         color: white;
     }
-    .center {
-        position: relative;
-        float: left;
-        left: 10%;
-        transform: translate(50%, 100%);
-    }
+
     h1 {
         text-shadow: .5px .5px 1px black, 0 0 .5em grey, 0 0 0.1em grey;
+        font-size: 52px;
     }
+
     .btn {
         color: white;
         border-color: white;
         size: 100%;
+    }
+
+    .container {
+        padding-top: 160px;
     }
 </style>
 
@@ -59,16 +60,15 @@
 <!-- Navbar -->
 
 <body>
-
-    <div class="center">
-        <div class="container text-center my-auto">
-            <h1 style="font-size:4vw;">Free online recruiting</h1>
-            <p style="font-size: 24px;"> Upload a group of resumes (PDF only) to be reviewed <br>
-                and ranked using our talent acquisition bot!</p>
-            <form action="app.php">
-                <button class="btn btn-outline-secondary btn-lg">Try me!</button>
-            </form>
-        </div>
+    <div class="container text-center my-auto">
+        <h1>Free online recruiting</h1>
+        <p style="font-size: 24px;">
+            <em>Upload a group of resumes (PDF only) to be reviewed <br>
+                and ranked using our talent acquisition bot!</em>
+        </p>
+        <form action="app.php">
+            <button class="btn btn-outline-secondary btn-lg">Try me!</button>
+        </form>
     </div>
 
 </body>
